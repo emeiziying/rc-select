@@ -12,7 +12,7 @@ export default (
   fieldNames: FieldNames,
   searchValue?: string,
   filterOption?: SelectProps['filterOption'],
-  optionFilterProp?: string,
+  optionFilterProp?: string | string[],
 ) =>
   React.useMemo(() => {
     if (!searchValue || filterOption === false) {
@@ -30,7 +30,11 @@ export default (
       : (_: string, option: DefaultOptionType) => {
           // Use provided `optionFilterProp`
           if (optionFilterProp) {
-            return includes(option[optionFilterProp], upperSearch);
+            if (optionFilterProp instanceof Array) {
+              return optionFilterProp.some((e) => includes(option[e], upperSearch));
+            } else {
+              return includes(option[optionFilterProp], upperSearch);
+            }
           }
 
           // Auto select `label` or `value` by option type

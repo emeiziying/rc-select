@@ -20,9 +20,9 @@ const Test = () => (
       showSearch
       style={{ width: 500 }}
       filterSort={sorterByLabel}
-      optionFilterProp="label"
+      optionFilterProp={['label','value']}
       options={incidencesStateResource}
-    ></Select>
+    />
     <h3> without filter sort </h3>
     <Select
       showSearch
