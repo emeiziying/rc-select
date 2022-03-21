@@ -40,3 +40,5 @@ tsconfig.test.json
 storybook/index.js
 .doc
 .umi
+
+**/.rush/temp/
