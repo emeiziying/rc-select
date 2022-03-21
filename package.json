@@ -1,5 +1,5 @@
 {
-  "name": "rc-select",
+  "name": "@sweet7/rc-select",
   "version": "14.0.5",
   "description": "React Select",
   "engines": {
