@@ -35,19 +35,19 @@ class Test extends React.Component {
     console.log(args);
   };
 
-  useAnim = e => {
+  useAnim = (e) => {
     this.setState({
       useAnim: e.target.checked,
     });
   };
 
-  showArrow = e => {
+  showArrow = (e) => {
     this.setState({
       showArrow: e.target.checked,
     });
   };
 
-  loading = e => {
+  loading = (e) => {
     this.setState({
       loading: e.target.checked,
     });
@@ -89,13 +89,16 @@ class Test extends React.Component {
             showArrow={showArrow}
             allowClear
             optionFilterProp="children"
-            optionLabelProp="children"
+            optionLabelProp="title"
+            fieldNames={{
+              label: 'title',
+            }}
             onSelect={this.onSelect}
             onDeselect={this.onDeselect}
             placeholder="please select"
             onChange={this.onChange}
             onFocus={() => console.log('focus')}
-            onBlur={v => console.log('blur', v)}
+            onBlur={(v) => console.log('blur', v)}
             tokenSeparators={[' ', ',']}
           >
             {children}
