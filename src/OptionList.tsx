@@ -15,7 +15,7 @@ import type { BaseOptionType, RawValueType } from './Select';
 import type { FlattenOptionData } from './interface';
 
 // export interface OptionListProps<OptionsType extends object[]> {
-export type OptionListProps = Record<string, never>;
+export type OptionListProps = Record<string, any>;
 
 export interface RefOptionListProps {
   onKeyDown: React.KeyboardEventHandler;
@@ -35,8 +35,16 @@ const OptionList: React.ForwardRefRenderFunction<RefOptionListProps, OptionListP
   _,
   ref,
 ) => {
-  const { prefixCls, id, open, multiple, searchValue, toggleOpen, notFoundContent, onPopupScroll } =
-    useBaseProps();
+  const {
+    prefixCls,
+    id,
+    open,
+    multiple,
+    searchValue,
+    toggleOpen,
+    notFoundContent,
+    onPopupScroll,
+  } = useBaseProps();
   const {
     flattenOptions,
     onActiveValue,
