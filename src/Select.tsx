@@ -314,10 +314,9 @@ const Select = React.forwardRef(
     }, [mode, mergedValues]);
 
     /** Convert `displayValues` to raw value type set */
-    const rawValues = React.useMemo(
-      () => new Set(mergedValues.map((val) => val.value)),
-      [mergedValues],
-    );
+    const rawValues = React.useMemo(() => new Set(mergedValues.map((val) => val.value)), [
+      mergedValues,
+    ]);
 
     React.useEffect(() => {
       if (mode === 'combobox') {
@@ -516,7 +515,9 @@ const Select = React.forwardRef(
         const formatted = (searchText || '').trim();
         // prevent empty tags from appearing when you click the Enter button
         if (formatted) {
-          const newRawValues = Array.from(new Set<RawValueType>([...rawValues, formatted]));
+          const newRawValues = Array.from(
+            new Set<RawValueType>([...rawValues, formatted]),
+          );
           triggerChange(newRawValues);
           triggerSelect(formatted, true);
           setSearchValue('');
@@ -540,13 +541,15 @@ const Select = React.forwardRef(
       if (mode !== 'tags') {
         patchValues = words
           .map((word) => {
-            const opt = labelOptions.get(word);
+            const opt = labelOptions.get(word) || valueOptions.get(word);
             return opt?.value;
           })
           .filter((val) => val !== undefined);
       }
 
-      const newRawValues = Array.from(new Set<RawValueType>([...rawValues, ...patchValues]));
+      const newRawValues = Array.from(
+        new Set<RawValueType>([...rawValues, ...patchValues]),
+      );
       triggerChange(newRawValues);
       newRawValues.forEach((newRawValue) => {
         triggerSelect(newRawValue, true);
@@ -628,9 +631,9 @@ if (process.env.NODE_ENV !== 'production') {
   Select.displayName = 'Select';
 }
 
-const TypedSelect = Select as unknown as (<
+const TypedSelect = (Select as unknown) as (<
   ValueType = any,
-  OptionType extends BaseOptionType | DefaultOptionType = DefaultOptionType,
+  OptionType extends BaseOptionType | DefaultOptionType = DefaultOptionType
 >(
   props: React.PropsWithChildren<SelectProps<ValueType, OptionType>> & {
     ref?: React.Ref<BaseSelectRef>;
