@@ -2,10 +2,9 @@ import { mount } from 'enzyme';
 import KeyCode from 'rc-util/lib/KeyCode';
 import { act } from 'react-dom/test-utils';
 import React from 'react';
-import type { OptionListProps, RefOptionListProps } from '../src/OptionList';
+import type { RefOptionListProps } from '../src/OptionList';
 import OptionList from '../src/OptionList';
 import { injectRunAllTimers } from './utils/common';
-import type { OptionsType } from '../src/interface';
 import { fillFieldNames, flattenOptions } from '../src/utils/valueUtil';
 import SelectContext from '../src/SelectContext';
 import { BaseSelectContext } from '../src/hooks/useBaseProps';
@@ -33,7 +32,7 @@ describe('OptionList', () => {
     return (
       <BaseSelectContext.Provider
         value={{
-          prefixCls: 'rc-select',
+          prefixCls: 'sweet7_rc-select',
           ...props,
         }}
       >

@@ -2,7 +2,7 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: 'rc-select',
+  title: '@sweet7/rc-select',
   favicon:
     'https://avatars0.githubusercontent.com/u/9441414?s=200&v=4',
   logo:

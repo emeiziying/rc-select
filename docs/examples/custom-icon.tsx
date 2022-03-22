@@ -1,6 +1,6 @@
 /* eslint-disable no-console, max-classes-per-file */
 import React from 'react';
-import Select, { Option } from 'rc-select';
+import Select, { Option } from '@sweet7/rc-select';
 import '../../assets/index.less';
 
 const arrowPath =

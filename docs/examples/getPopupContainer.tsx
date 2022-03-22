@@ -3,7 +3,7 @@ import 'rc-dialog/assets/index.css';
 
 import Dialog from 'rc-dialog';
 import React from 'react';
-import Select, { Option } from 'rc-select';
+import Select, { Option } from '@sweet7/rc-select';
 
 class Test extends React.Component {
   state = {

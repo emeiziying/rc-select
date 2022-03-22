@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import Select, { Option } from 'rc-select';
+import Select, { Option } from '@sweet7/rc-select';
 import '../../assets/index.less';
 
 class Test extends React.Component {

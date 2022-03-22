@@ -52,20 +52,14 @@ export default function blurTest(mode: any) {
         jest.useFakeTimers();
         const handleBlur = jest.fn();
         wrapper.setProps({ onBlur: handleBlur });
-        wrapper
-          .find('input')
-          .instance()
-          .focus();
+        wrapper.find('input').instance().focus();
         expect(handleBlur).not.toHaveBeenCalled();
 
         wrapper.find('input').simulate('blur');
         expect(handleBlur).toHaveBeenCalled();
 
         wrapper.update();
-        wrapper
-          .find('input')
-          .instance()
-          .blur();
+        wrapper.find('input').instance().blur();
         jest.runAllTimers();
         handleBlur.mockReset();
 

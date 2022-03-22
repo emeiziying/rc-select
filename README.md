@@ -53,7 +53,7 @@ React Select
 ### basic use
 
 ```jsx | pure
-import Select, { Option } from 'rc-select';
+import Select, { Option } from '@sweet7/rc-select';
 
 export default () => (
   <Select>

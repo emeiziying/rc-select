@@ -1,15 +1,16 @@
 /* eslint-disable no-console */
 import React from 'react';
-import Select, { Option } from '@sweet7/rc-select';
+import Select from '@sweet7/rc-select';
 import '../../assets/index.less';
 
-const children = [];
+const selectOptions = [];
 for (let i = 10; i < 36; i += 1) {
-  children.push(
-    <Option key={i.toString(36) + i} disabled={i === 10} title={`中文${i}`}>
-      中文{i}
-    </Option>,
-  );
+  selectOptions.push({
+    label: `中文${i}`,
+    value: i.toString(36) + i,
+    desc: `中文${i}${i.toString(36) + i}`,
+    disabled: i === 10,
+  });
 }
 
 class Test extends React.Component {
@@ -79,6 +80,7 @@ class Test extends React.Component {
         <div style={{ width: 300 }}>
           <Select
             autoFocus
+            options={selectOptions}
             value={value}
             animation={useAnim ? 'slide-up' : null}
             choiceTransitionName="rc-select-selection__choice-zoom"
@@ -87,11 +89,7 @@ class Test extends React.Component {
             loading={loading}
             showArrow={showArrow}
             allowClear
-            optionFilterProp="children"
-            optionLabelProp="title"
-            fieldNames={{
-              label: 'title',
-            }}
+            optionFilterProp="desc"
             onSelect={this.onSelect}
             onDeselect={this.onDeselect}
             placeholder="please select"
@@ -99,9 +97,7 @@ class Test extends React.Component {
             onFocus={() => console.log('focus')}
             onBlur={(v) => console.log('blur', v)}
             tokenSeparators={[' ', ',']}
-          >
-            {children}
-          </Select>
+          />
         </div>
       </div>
     );

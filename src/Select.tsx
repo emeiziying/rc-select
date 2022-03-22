@@ -154,7 +154,7 @@ const Select = React.forwardRef(
     const {
       id,
       mode,
-      prefixCls = 'rc-select',
+      prefixCls = 'sweet7_rc-select',
       backfill,
       fieldNames,
 
@@ -326,7 +326,7 @@ const Select = React.forwardRef(
           setSearchValue(String(strValue));
         }
       }
-    }, [mergedValues]);
+    }, [mergedValues, mode, setSearchValue]);
 
     // ======================= Display Option =======================
     // Create a placeholder item if not exist in `options`

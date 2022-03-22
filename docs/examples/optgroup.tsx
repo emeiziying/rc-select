@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import Select, { Option, OptGroup } from 'rc-select';
+import Select, { Option, OptGroup } from '@sweet7/rc-select';
 import '../../assets/index.less';
 
 function onChange(value, option) {
