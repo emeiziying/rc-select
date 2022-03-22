@@ -1,6 +1,6 @@
 {
   "name": "@sweet7/rc-select",
-  "version": "14.0.5",
+  "version": "14.0.6-6",
   "description": "React Select",
   "engines": {
     "node": ">=8.x"
@@ -38,6 +38,10 @@
     "test": "father test",
     "tsc": "tsc --noEmit",
     "now-build": "npm run build"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "peerDependencies": {
     "react": "*",
